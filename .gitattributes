@@ -1,0 +1,11 @@
+
+* text=auto
+
+*.cs text
+*.csproj text
+*.slnx text
+*.json text
+*.md text
+
+*.sh text eol=lf
+*.ps1 text eol=crlf

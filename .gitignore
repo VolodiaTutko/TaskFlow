@@ -1,0 +1,31 @@
+
+# Build output
+**/bin/
+**/obj/
+
+# Visual Studio
+.vs/
+*.user
+*.suo
+
+# VS Code
+.vscode/*
+
+# JetBrains Rider
+.idea/
+
+# Test results
+TestResults/
+coverage/
+
+# Environment variables
+.env
+.env.*
+!.env.example
+
+# Local secrets
+secrets.json
+
+# Node / React
+node_modules/
+dist/
