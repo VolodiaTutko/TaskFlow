@@ -29,3 +29,7 @@ secrets.json
 # Node / React
 node_modules/
 dist/
+
+# Serilog logs
+**/logs/
+*.log
