@@ -17,6 +17,9 @@ public sealed class SafeRequestLoggingTests
            .WithWebHostBuilder(builder =>
            {
                builder.UseEnvironment("Testing");
+               builder.UseSetting(
+                                    "ConnectionStrings:DefaultConnection",
+                                    "Host=localhost;Port=5433;Database=taskflow_test;Username=test");
 
                builder.ConfigureServices(services =>
                {
