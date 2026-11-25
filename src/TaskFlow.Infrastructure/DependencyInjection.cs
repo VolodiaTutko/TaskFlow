@@ -19,6 +19,11 @@ public static class DependencyInjection
         services.AddDbContext<TaskFlowDbContext>(options =>
             options.UseNpgsql(connectionString));
 
+        services.AddHealthChecks()
+    .AddDbContextCheck<TaskFlowDbContext>(
+        name: "postgres",
+        tags: ["ready"]);
+
         return services;
     }
 }

@@ -33,3 +33,7 @@ dist/
 # Serilog logs
 **/logs/
 *.log
+
+
+# Claude code :) 
+CLAUDE.md
