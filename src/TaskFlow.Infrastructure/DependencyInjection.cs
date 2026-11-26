@@ -1,9 +1,10 @@
-﻿using Microsoft.EntityFrameworkCore;
+﻿using Microsoft.AspNetCore.Identity;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
-using TaskFlow.Infrastructure.Persistence;
-using Microsoft.AspNetCore.Identity;
+using TaskFlow.Application.Abstractions.Authentification;
 using TaskFlow.Infrastructure.Identity;
+using TaskFlow.Infrastructure.Persistence;
 
 namespace TaskFlow.Infrastructure;
 
@@ -42,6 +43,8 @@ public static class DependencyInjection
     .AddDbContextCheck<TaskFlowDbContext>(
         name: "postgres",
         tags: ["ready"]);
+
+        services.AddScoped<IIdentityService, IdentityService>();
 
         return services;
     }

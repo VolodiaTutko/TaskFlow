@@ -4,7 +4,8 @@ using TaskFlow.Infrastructure;
 using TaskFlow.Api.ExceptionHandling;
 using TaskFlow.Api.Middleware;
 using TaskFlow.Api.Logging;
-using Microsoft.AspNetCore.Diagnostics.HealthChecks;    
+using Microsoft.AspNetCore.Diagnostics.HealthChecks;
+using TaskFlow.Api.Endpoints;
 
 
 var builder = WebApplication.CreateBuilder(args);
@@ -63,6 +64,8 @@ app.MapHealthChecks("/health/ready", new HealthCheckOptions  // check Database
 {
     Predicate = check => check.Tags.Contains("ready")
 });
+
+app.MapAuthEndpoints();
 
 app.Run();
 
